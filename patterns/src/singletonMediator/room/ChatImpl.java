@@ -14,10 +14,10 @@ public class ChatImpl implements Chat {
 	/*
 	 * I'm using CopyOnWriteArrayList because it's thread-safe and doesn't need any explicit synchronization
 	 * I got ConcurrentModificationException when I remove user in Bot, because ArrayList is not thread-safe.
-	 * Some thread is traversing over the collection using iterator.next()
+	 * Some thread is traversed over the collection using iterator.next()
 	 * There are a lot of solutions for this problem in multithreaded programming.
-	 * Some of the solution I know: using ConcurrentHashMap or Array
-	 * Or simply change the business logic between Bot and Chat
+	 * Some of the solution I know is using ConcurrentHashMap or Array
+	 * or simply change the business logic between Bot and Chat
 	 */
 	private CopyOnWriteArrayList<User> users;
 	private Set<Bot> bots;
